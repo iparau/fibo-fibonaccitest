@@ -1,8 +1,6 @@
 // CTCFibonacciTest.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
-
 #include <cppunit/TestResult.h>
 #include <cppunit/TestResultCollector.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>

@@ -5,14 +5,11 @@
 HEADERS += ./incl/CTCFibonacciTest.h \
 	./incl/InputDataTest.h \
 	./incl/OutputDataTest.h \
-	./incl/stdafx.h \
-	./incl/targetver.h \
 	./incl/XmlFileParser.h 
 
 SOURCES += ./srce/CTCFibonacciTest.cpp \
 	./srce/InputDataTest.cpp \
 	./srce/main.cpp \
 	./srce/OutputDataTest.cpp \
-	./srce/stdafx.cpp \
 	./srce/XmlFileParser.cpp 
 

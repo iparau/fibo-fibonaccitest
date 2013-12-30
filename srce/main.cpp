@@ -1,10 +1,8 @@
-#include "stdafx.h"
-
 #include "CTCFibonacciTest.h"
 
 #include "Trace.h"
 
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char* argv[])
 {
 	SetTraceLevel( TraceDetail );
 
