@@ -3,8 +3,13 @@
 
 #include "stdafx.h"
 
+#include <cppunit/TestResult.h>
+#include <cppunit/TestResultCollector.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
+#include <cppunit/BriefTestProgressListener.h>
+#include <cppunit/CompilerOutputter.h>
+#include <cppunit/XmlOutputter.h>
 
 #include <xercesc/util/PlatformUtils.hpp>
 // Other include files, declarations, and non-Xerces-C++ initializations.
@@ -54,11 +59,33 @@ bool CTCFibonacciTest::runTests()
 	if ( true == isInitialized() ) {
 		WriteTrace( TraceDebug, "Test session started.");
 
-		CppUnit::TextUi::TestRunner runner;
-		CppUnit::TestFactoryRegistry &registry = CppUnit::TestFactoryRegistry::getRegistry();
-		runner.addTest( registry.makeTest() );
+		// informs test-listener about testresults
+		CppUnit::TestResult testresult;
 
-		retVal = runner.run( "", false );
+		// register listener for collecting the test-results
+		CppUnit::TestResultCollector collectedresults;
+		testresult.addListener (&collectedresults);
+
+		// register listener for per-test progress output
+		CppUnit::BriefTestProgressListener progress;
+		testresult.addListener (&progress);
+
+		// insert test-suite at test-runner by registry
+		CppUnit::TextUi::TestRunner runner;
+		runner.addTest (CppUnit::TestFactoryRegistry::getRegistry().makeTest ());
+		runner.run(testresult);
+
+		// output results in compiler-format
+		CppUnit::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
+		compileroutputter.write ();
+
+		// Output XML for Jenkins CPPunit plugin
+		std::ofstream xmlFileOut("FibonacciTestResults.xml");
+		CppUnit::XmlOutputter xmlOut(&collectedresults, xmlFileOut);
+		xmlOut.write();
+
+		// return 0 if tests were successful
+		retVal =  collectedresults.wasSuccessful();
 
 		WriteTrace( TraceDebug, "Test session ended.");
 	}
