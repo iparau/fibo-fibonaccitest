@@ -2,7 +2,7 @@
 
 #include "CTCFibonacciTest.h"
 
-#include "incl/Trace.h"
+#include "Trace.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {

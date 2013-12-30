@@ -9,10 +9,10 @@
 #include <xercesc/util/PlatformUtils.hpp>
 // Other include files, declarations, and non-Xerces-C++ initializations.
 
-#include <CTCFibonacciTest.h>
+#include "CTCFibonacciTest.h"
 
-#include "incl/AStr.h"
-#include "incl/Trace.h"
+#include "AStr.h"
+#include "Trace.h"
 
 XERCES_CPP_NAMESPACE_USE
 using namespace core::tools;

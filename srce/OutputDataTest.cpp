@@ -4,8 +4,8 @@
 #include "stdafx.h"
 
 #include <OutputDataTest.h>
-#include "incl/OutputData.h"
-#include "incl/Trace.h"
+#include "OutputData.h"
+#include "Trace.h"
 
 namespace test {
 

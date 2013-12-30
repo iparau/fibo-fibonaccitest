@@ -6,11 +6,11 @@
 #include <xercesc/util/OutOfMemoryException.hpp>
 // Other include files, declarations, and non-Xerces-C++ initializations.
 
-#include "incl/AStr.h"
-#include "incl/XStr.h"
-#include "incl/NStr.h"
+#include "AStr.h"
+#include "XStr.h"
+#include "NStr.h"
 
-#include "incl/Trace.h"
+#include "Trace.h"
 
 XERCES_CPP_NAMESPACE_USE
 using namespace std;
