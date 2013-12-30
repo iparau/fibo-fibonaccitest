@@ -1,5 +1,5 @@
 ! exists ( ../common.pri ) {
-	error( "Could not find the common.pri file!" )
+	error( 'Could not find the common.pri file!' )
 }
 
 include( ../common.pri )
