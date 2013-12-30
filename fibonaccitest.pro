@@ -6,15 +6,13 @@ include( ../common.pri )
 
 TEMPLATE = app
 
-CONFIG  *= link_prl xml
+CONFIG  *= link_prl console
 
 CONFIG -= qt
 
 TARGET = FibonacciTest
 
-win32 {
-	DEFINES *= UNICODE
-}
+DEFINES *= XERCES_STATIC_LIBRARY
 
 INCLUDEPATH += $$LIB_CPPUNIT_DIR_INC
 INCLUDEPATH += $$LIB_XERCES_DIR_INC
@@ -59,6 +57,10 @@ CONFIG(debug,debug|release) {
 LIBS *= -lcppunit
 LIBS *= -lxerces
 LIBS *= -lcore
+
+win32 {
+	LIBS*= -lAdvapi32
+}
 
 #Include file(s)
 include(fibonaccitest.pri)
