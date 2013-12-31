@@ -10,7 +10,7 @@ CONFIG  *= link_prl console
 
 CONFIG -= qt
 
-TARGET = FibonacciTest
+TARGET = fibonaccitest
 
 DEFINES *= XERCES_STATIC_LIBRARY
 
