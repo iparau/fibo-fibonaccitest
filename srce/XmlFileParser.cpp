@@ -19,7 +19,7 @@ namespace test {
 namespace tools {
 
 CXmlFileParser::CXmlFileParser(void)
-: parser( NULL ), errHandler( NULL)
+    : fibonacciID( 0 ), parser( NULL ), errHandler( NULL)
 {
 
 }
@@ -76,7 +76,7 @@ bool CXmlFileParser::Initialize(const char * xmlFilePath)
 		parser->setValidationScheme(XercesDOMParser::Val_Always);
 		parser->setDoNamespaces(true);    // optional
 
-		errHandler = (ErrorHandler*) new HandlerBase();
+        errHandler = static_cast<ErrorHandler*>( new HandlerBase() );
 
 		if (0 != errHandler) {
 			parser->setErrorHandler(errHandler);
@@ -463,17 +463,17 @@ bool CXmlFileParser::validateChildrenNumberNodes()
 														}
 													}
 													else {
-														//detected internal document error
-														break;
-
 														WriteTrace( TraceError, "Number node invalid, atribute 'id' not detected!" );
+
+                                                        //detected internal document error
+                                                        break;
 													}
 												}
 												else {
-													//detected internal document error
-													break;
-
 													WriteTrace( TraceError, "Number node invalid, atribute 'id' not identified!" );
+
+                                                    //detected internal document error
+                                                    break;
 												}
 
 												/////////////////////////////////////////////////////////
@@ -502,25 +502,25 @@ bool CXmlFileParser::validateChildrenNumberNodes()
 														}
 													}
 													else {
-														//detected internal document error
-														break;
-
 														WriteTrace( TraceError, "Number node invalid, atribute 'value' not detected!" );
+
+                                                        //detected internal document error
+                                                        break;
 													}
 												}
 												else {
-													//detected internal document error
-													break;
-
 													WriteTrace( TraceError, "Number node invalid, atribute 'value' not identified!" );
+
+                                                    //detected internal document error
+                                                    break;
 												}
 												/////////////////////////////////////////////////////////
 											}
 												else {
-													//detected internal document error
-													break;
-
 													WriteTrace( TraceError, "Number node invalid, no attributes detected!" );
+
+                                                    //detected internal document error
+                                                    break;
 												}
 											}
 											///////////////////////////////////////////////////////////////////////////

@@ -8,6 +8,7 @@
 /*.filters
 /WinMakefile
 /LinMakefile
+/Makefile
 /*.Debug
 /*.Release
 /*.pdb

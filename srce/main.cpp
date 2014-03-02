@@ -2,9 +2,14 @@
 
 #include "Trace.h"
 
+#define Q_UNUSED(arg) (void)arg;
+
 int main(int argc, char* argv[])
 {
-	SetTraceLevel( TraceDetail );
+    Q_UNUSED(argc);
+    Q_UNUSED(argv);
+
+    SetTraceLevel( TraceDetail );
 
 	bool wasSuccessful = false;
 
