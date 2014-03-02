@@ -46,11 +46,9 @@ void CInputDataTest::testInput_Initialise()
 {
 	WriteTrace( TraceDebug, "Test Initialise.");
 
-	bool testInitialise = false;
-
 	core::CInputData inputData;
 	 
-	testInitialise = inputData.Initialize( inputXmlFilePath ); 
+	bool testInitialise = inputData.Initialize( inputXmlFilePath ); 
 
 	CPPUNIT_ASSERT( testInitialise );
 }
